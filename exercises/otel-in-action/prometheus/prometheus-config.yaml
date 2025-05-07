@@ -1,4 +1,4 @@
-global:
+docker stop global:
   evaluation_interval: 30s
   scrape_interval: 5s
 scrape_configs:

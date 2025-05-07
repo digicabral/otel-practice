@@ -1,4 +1,6 @@
 package io.novatec.todobackend;
+import io.opentelemetry.instrumentation.annotations.SpanAttribute;
+import io.opentelemetry.instrumentation.annotations.WithSpan;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,7 +80,8 @@ public class TodobackendApplication {
 
 	}
 
-	String someInternalMethod(String todo){
+	@WithSpan String 
+	someInternalMethod(@SpanAttribute String todo){
 
 		todoRepository.save(new Todo(todo));
 		if(todo.equals("slow")){
